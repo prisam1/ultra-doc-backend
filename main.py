@@ -11,13 +11,16 @@ from langchain_google_genai import ChatGoogleGenerativeAI, GoogleGenerativeAIEmb
 from langchain_text_splitters import RecursiveCharacterTextSplitter
 from langchain_community.vectorstores import FAISS
 from langchain_community.document_loaders import PyMuPDFLoader
+from dotenv import load_dotenv
+
+load_dotenv()
 
 # Logging Setup
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
-# Ensure this is set in your environment
-API_KEY = os.getenv("GOOGLE_API_KEY", "YOUR_API_KEY_HERE")
+# Environment
+API_KEY = os.getenv("GOOGLE_API_KEY")
 
 app = FastAPI()
 
@@ -38,7 +41,7 @@ class QuestionRequest(BaseModel):
 # Factories
 def get_llm():
     return ChatGoogleGenerativeAI(
-        model="gemini-2.5-flash", # Or gemini-2.5-flash based on your access
+        model="gemini-2.5-flash",
         google_api_key=API_KEY,
         version="v1",
         temperature=0,
