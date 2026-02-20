@@ -3,9 +3,9 @@
  UltraDoc is an AI-powered document auditor designed for Transportation Management Systems (TMS). It allows users to upload logistics documents (PDF/DOCX) and perform grounded Q&A and structured data extraction with built-in hallucination guardrails.
  
   # Submission Links
-   Hosted UI:  
+  # Hosted UI: https://ultra-doc-frontend.vercel.app/
 
-   GitHub Repository:  https://github.com/prisam1/ultra-doc-backend.git 
+  # GitHub Repository:  https://github.com/prisam1/ultra-doc-backend.git 
  
   # Architecture
   The system utilizes a Modular RAG (Retrieval-Augmented Generation) architecture:
